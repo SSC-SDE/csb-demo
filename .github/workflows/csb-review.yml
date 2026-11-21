@@ -23,7 +23,7 @@ jobs:
           fetch-depth: 0
 
       - name: CodeShouldBehave
-        uses: SSC-SDE/CodeShouldBehave@feat/pages-report-link
+        uses: SSC-SDE/CodeShouldBehave@v1
         with:
           design: auto
           pages: true
