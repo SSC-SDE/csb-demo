@@ -7,6 +7,8 @@ on:
 permissions:
   contents: read
   pull-requests: write
+  pages: write
+  id-token: write
 
 concurrency:
   group: csb-review-${{ github.event.pull_request.number }}
@@ -21,7 +23,8 @@ jobs:
           fetch-depth: 0
 
       - name: CodeShouldBehave
-        uses: SSC-SDE/CodeShouldBehave@v0.7.0
+        uses: SSC-SDE/CodeShouldBehave@feat/pages-report-link
         with:
           design: auto
+          pages: true
           fail-on-incomplete: false
