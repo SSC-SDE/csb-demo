@@ -1,5 +1,7 @@
+mod arithmetic;
+
 pub fn add(a: i32, b: i32) -> i32 {
-    a + b
+    arithmetic::bounded_sum(a, b)
 }
 
 pub fn handle(a: i32, b: i32) -> i32 {
