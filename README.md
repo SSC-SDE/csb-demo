@@ -18,6 +18,22 @@ The demo pull request changes `add`, adds `subtract`, and keeps `handle` and
 `other` as lexical callers. The report shows the HLD/LLD delta and exact
 baseline/proposal source.
 
+## Review a multi-crate change
+
+The sensor batch example reads `sensor,timestamp,value` records from stdin.
+Timestamps are unsigned milliseconds; readings are signed integers. Replaying
+an identical reading does not increase its count. Two different values at the
+same sensor and timestamp reject the entire batch.
+
+```sh
+printf 'west,10,7\nwest,11,9\nwest,10,7\n' | cargo run --quiet --bin sensor-batch
+```
+
+The output includes `west,2,7,9,16`. Follow `process_batch` from parsing to
+normalization, grouped statistics and CSV rendering. These are separate Cargo
+packages so package dependencies and local function flow can be reviewed
+independently. Run `cargo test --workspace` to check the pipeline.
+
 ## Use this template
 
 Click **Use this template → Create a new repository**, or open

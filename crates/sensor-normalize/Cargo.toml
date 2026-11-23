@@ -1,0 +1,7 @@
+[package]
+name = "sensor-normalize"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+sensor-input = { path = "../sensor-input" }
