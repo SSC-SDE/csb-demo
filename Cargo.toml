@@ -2,3 +2,13 @@
 name = "csb-demo"
 version = "0.1.0"
 edition = "2021"
+
+[workspace]
+members = ["crates/*"]
+resolver = "2"
+
+[dependencies]
+sensor-input = { path = "crates/sensor-input" }
+sensor-normalize = { path = "crates/sensor-normalize" }
+sensor-stats = { path = "crates/sensor-stats" }
+sensor-render = { path = "crates/sensor-render" }

@@ -5,3 +5,34 @@ version = 4
 [[package]]
 name = "csb-demo"
 version = "0.1.0"
+dependencies = [
+ "sensor-input",
+ "sensor-normalize",
+ "sensor-render",
+ "sensor-stats",
+]
+
+[[package]]
+name = "sensor-input"
+version = "0.1.0"
+
+[[package]]
+name = "sensor-normalize"
+version = "0.1.0"
+dependencies = [
+ "sensor-input",
+]
+
+[[package]]
+name = "sensor-render"
+version = "0.1.0"
+dependencies = [
+ "sensor-stats",
+]
+
+[[package]]
+name = "sensor-stats"
+version = "0.1.0"
+dependencies = [
+ "sensor-input",
+]
